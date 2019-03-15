@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myGame</title>
+    <style>
+        .border {
+            margin:0;
+            position: absolute;
+            border: 3px solid black;
+            width: 600px;
+            height: 800px;
+        }
+        .cube {
+            background-color: red;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+
+            left: 400px;
+            top: 400px;
+
+        }
+        p{
+            position: absolute;
+            left: 40%;
+            text-align: center;
+            font-size: 50px;
+            margin-top: 150px;
+            margin-right: 20px;
+        }
+        #bu {
+            width: 100px;
+            height: 100px;
+            left: 200px;
+            position: relative;
+            top: 30px;
+            color: black;
+            background-color: darkred;
+            border: none;
+        }
+        .defculty {
+            position: absolute;
+            left: 40%;
+            top: -100px;
+        }
+        .inc {
+            position: relative;
+            left: -200px;
+        }
+
+
+    </style>
+    <script src="MyGame.js"></script>
+</head>
+<body>
+<p id="cor">Try not to Touch the Red Block</p>
+<p id="corr" style="top: 180px"></p>
+<div id="border" class="border">
+    <button id="bu">Start!</button>
+    <button class="inc" style="left:250px" id="incress" onclick="incres()">increase difficulty<br>+</button>
+    <button class="inc" id="dcress" onclick="decress()">decrease difficulty <br>-</button>
+    <div id="cube" class="cube">
+
+    </div>
+</div>
+<p id="dd" class="defculty"></p>
+</body>
+</html>
