@@ -39,29 +39,31 @@ function startGame() {
 
 }
 function doit() {
-    var cube = document.getElementById('cube');
-    var bordertop = document.getElementById('border');
+    if(win) {
+        var cube = document.getElementById('cube');
+        var bordertop = document.getElementById('border');
 
-    cube.setAttribute('style', 'left:' + left + 'px;top:' + tops + 'px;');
+        cube.setAttribute('style', 'left:' + left + 'px;top:' + tops + 'px;');
 
 
-    bordertop.onmousemove = function h(e) {
-        mousex = e.clientX;
-        mousey = e.clientY;
-    };
-    if (tops + 40 > mousey) {
-        tops -= topspeed;
+        bordertop.onmousemove = function h(e) {
+            mousex = e.clientX;
+            mousey = e.clientY;
+        };
+        if (tops + 40 > mousey) {
+            tops -= topspeed;
+        }
+        if (tops + 40 < mousey) {
+            tops += topspeed;
+        }
+        if (left + 40 < mousex) {
+            left += leftspeed;
+        }
+        if (left + 40 > mousex) {
+            left -= leftspeed;
+        }
     }
-    if (tops + 40 < mousey) {
-        tops += topspeed;
-    }
-    if (left + 40 < mousex) {
-        left += leftspeed;
-    }
-    if (left + 40 > mousex) {
-        left -= leftspeed;
-    }
-    if (mousex < left + 80 && mousex > left && mousey < tops + 80 && mousey > tops) {
+    if (mousex < left + 80 && mousex > left && mousey < tops + 80 && mousey > tops||mousex>600||mousey>800) {
         var co = document.getElementById('cor');
         co.innerHTML = "YOU LOST! <br>Enter any key to restart</br>";
         document.body.style.backgroundColor="black";

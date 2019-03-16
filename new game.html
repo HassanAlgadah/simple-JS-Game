@@ -30,13 +30,15 @@
             margin-right: 20px;
         }
         #bu {
-            width: 100px;
-            height: 100px;
-            left: 200px;
+            width: 288px;
+            height: 70px;
+            left: 150px;
             position: relative;
             top: 30px;
             color: black;
             background-color: darkred;
+            background-image: url("download.png");
+            background-position: 50% 50%;
             border: none;
         }
         .defculty {
@@ -46,7 +48,7 @@
         }
         .inc {
             position: relative;
-            left: -200px;
+            left: -400px;
         }
 
 
@@ -57,11 +59,11 @@
 <p id="cor" style="color: darkred">Try not to Touch the Red Block</p>
 <p id="corr" style="top: 180px ; color: darkred"></p>
 <div id="border" class="border">
-    <button id="bu">Start!</button>
-    <button class="inc" style="left:250px" id="incress" onclick="incres()">increase difficulty<br>+</button>
+    <button id="bu" ></button>
+    <button class="inc" style="left:155px" id="incress" onclick="incres()">increase difficulty<br>+</button>
     <button class="inc" id="dcress" onclick="decress()">decrease difficulty <br>-</button>
     <div id="cube" class="cube">
-
+        <img src="Capture.PNG" height="80px" width="80px">
     </div>
 </div>
 <p id="dd" class="defculty"></p>
