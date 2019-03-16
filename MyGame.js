@@ -18,16 +18,11 @@ function start() {
     buttn1 =document.getElementById("incress");
     buttn2 =document.getElementById("incress");
     document.onkeydown = function (e) {
-        key_press = e.code;
-        console.log(key_press);
-        if(key_press == "Space"){
             document.location.href = ""
-        }
-    };
+        };
+
 
     buttn.addEventListener('click',startGame,false);
-
-
 }
 function startGame() {
     buttn.style.display="none";
@@ -35,6 +30,12 @@ function startGame() {
     buttn2.style.display="none";
     if(win)
         window.setInterval('doit()', 1);
+    window.setInterval(function () {
+        if (win) {
+            x++;
+            document.getElementById('corr').innerHTML = "your score: " + x;
+            }
+    }, 10);
 
 }
 function doit() {
@@ -62,7 +63,7 @@ function doit() {
     }
     if (mousex < left + 80 && mousex > left && mousey < tops + 80 && mousey > tops) {
         var co = document.getElementById('cor');
-        co.innerHTML = "YOU LOST!"
+        co.innerHTML = "YOU LOST! <br>Enter any key to restart</br>";
         document.body.style.backgroundColor="black";
         win = false;
     }
@@ -71,11 +72,7 @@ function doit() {
     console.log("MY = " + mousey);
     console.log("top = " + tops);
     console.log("left = " + left);
-    window.setInterval(function () {
-        if (win) {
-        document.getElementById('corr').innerHTML = "your score: " + x/1000;
-        x++;}
-    }, 1000);
+
 
 }
 function incres(){
