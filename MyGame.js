@@ -17,6 +17,13 @@ function start() {
     dif.innerHTML='the difficulty level is '+ leftspeed;
     buttn1 =document.getElementById("incress");
     buttn2 =document.getElementById("incress");
+    document.onkeydown = function (e) {
+        key_press = e.code;
+        console.log(key_press);
+        if(key_press == "Space"){
+            document.location.href = ""
+        }
+    };
 
     buttn.addEventListener('click',startGame,false);
 
@@ -36,10 +43,7 @@ function doit() {
 
     cube.setAttribute('style', 'left:' + left + 'px;top:' + tops + 'px;');
 
-    document.onkeydown = function (e) {
-        key_press = String.fromCharCode(e.keyCode);
-        console.log(key_press);
-    };
+
     bordertop.onmousemove = function h(e) {
         mousex = e.clientX;
         mousey = e.clientY;
