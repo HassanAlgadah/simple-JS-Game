@@ -2,7 +2,7 @@ var left = 400;
 var tops = 400;
 var leftspeed=1;
 var topspeed=1;
-var x = 0;
+var x = 1;
 var key_press;
 var mousex = 0;
 var mousey =0;
@@ -11,12 +11,14 @@ var buttn;
 var dif;
 var buttn1;
 var buttn2;
+var box ;
 function start() {
     buttn =document.getElementById("bu");
     dif = document.getElementById('dd');
     dif.innerHTML='the difficulty level is '+ leftspeed;
     buttn1 =document.getElementById("incress");
     buttn2 =document.getElementById("incress");
+    box = document.getElementById('checkbo');
     document.onkeydown = function (e) {
             document.location.href = ""
         };
@@ -50,6 +52,16 @@ function doit() {
             mousex = e.clientX;
             mousey = e.clientY;
         };
+
+
+        if(box.checked==true) {
+            console.log("checked")
+            if (x % 500 == 0) {
+                console.log(x)
+                leftspeed += 0.5
+                topspeed += 0.5
+            }
+        }
         if (tops + 40 > mousey) {
             tops -= topspeed;
         }
@@ -70,10 +82,10 @@ function doit() {
         win = false;
     }
     key_press = 0;
-    console.log("MX = " + mousex);
-    console.log("MY = " + mousey);
-    console.log("top = " + tops);
-    console.log("left = " + left);
+    // console.log("MX = " + mousex);
+    // console.log("MY = " + mousey);
+    // console.log("top = " + tops);
+    // console.log("left = " + left);
 
 
 }
